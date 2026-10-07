@@ -62,5 +62,4 @@ while game_on:
 
 
 
-
 screen.exitonclick()
