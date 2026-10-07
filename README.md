@@ -243,11 +243,9 @@ Moving Up    → cannot immediately move Down
 - [x] Implement wall collision
 - [x] Implement self-collision
 - [x] Implement game-over conditions
-- [ ] Create the high score file
-- [ ] Read the high score from the file
-- [ ] Write new high scores to the file
-- [ ] Test persistent score functionality
-- [ ] Refactor the code
+- [x] Create the high score file
+- [x] Read the high score from the file
+- [x] Write new high scores to the file
 
 ---
 
@@ -289,8 +287,8 @@ The game uses a file to persist the player's high score.
 When the game starts, the program reads the previously stored high score.
 
 ```python
-with open("data.txt") as file:
-    high_score = int(file.read())
+with open("data.txt", mode="r") as file:
+    self.highscore = int(file.read())
 ```
 
 ### Writing
@@ -298,8 +296,8 @@ with open("data.txt") as file:
 When the player achieves a new high score, the program updates the file.
 
 ```python
-with open("data.txt", "w") as file:
-    file.write(str(high_score))
+with open("data.txt", mode="w") as file:
+    file.write(f"{self.highscore}")
 ```
 
 These examples demonstrate the basic principles of reading and writing persistent data in Python.
